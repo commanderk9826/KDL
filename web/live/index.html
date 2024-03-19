@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>KUST Telemetry Monitor</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta property="og:title" content="KUST Telemetry Monitor"/>
+		<meta property="og:url" content="https://commanderk.site/live"/>
+		<meta property="og:image" content="../asset/logo/kust_logo.png"/>
+		<meta property="og:description" content="KUST Telemetry Monitor"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/logo/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/logo/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/logo/favicon/favicon-16x16.png">
+
+    <link rel="stylesheet" href="../assets/btn.css">
+    <link rel="stylesheet" href="../assets/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7CH99H4S2Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7CH99H4S2Z');
+    </script>
+  </head>
+  <body>
+    <div id="header">
+      <div id="logo" style='margin-top: 1rem;'>
+        <a href="./live">
+          <img src="../assets/logo/kust_logo.png">
+        </a>
+      </div>
+
+      <header style="margin: auto; max-width: 414px;">
+        <div id="server" class="status left">
+          <i class="fa-solid fa-fw fa-network-wired" style="color: red"></i>
+          <div class="text">서버</div>
+        </div>
+        <div id="telemetry" class="status right">
+          <i class="fa-solid fa-fw fa-tower-broadcast" style="color: red"></i>
+          <div class="text">원격 계측</div>
+        </div>
+      </header>
+    </div>
+
+    <div id='dataarea' class="container"></div>
+    <div class="container">
+      <article id='settings' style='margin-top: .4rem;'>
+        <h1><i class="fa-solid fa-fw fa-passport"></i>&nbsp;원격 계측 모니터</h1>
+        <div class="content" style='padding-top: 1rem; line-height: 2rem'>
+          <div style="text-align: center">
+            <table class='param' style='margin-top: .5rem; margin-bottom: .5rem;'>
+              <tr>
+                <th class="param-label">
+                  <h2><i class="fa-solid fa-fw fa-1x fa-stopwatch"></i>&ensp;boot</h2>
+                </th>
+                <th id="timestamp" class="param-data" style='font-size: 2rem;'>0</th>
+                <th class="param-unit">ms</th>
+              </tr>
+            </table>
+            <div><a id='car_id_config' class="btn_download"><span class="btn blue"><i class="fa-solid fa-fw fa-car"></i>&ensp;차량 ID 설정</span></a></div>
+            <div><a id='ui_config' class="btn_download"><span class="btn blue"><i class="fa-solid fa-fw fa-tv"></i>&ensp;UI 설정</span></a></div>
+            <div><a class="btn_download" href='https://github.com/commanderk9826/DL_KUST' target='_blank'><span class="btn purple"><i class="fa-brands fa-fw fa-github"></i>&ensp;GitHub</span></a></div>
+            <div><a class="btn_download" href='/' target='_blank'><span class="btn yellow"><i class="fa-solid fa-fw fa-chart-column"></i>&ensp;Data Analyzer</span></a></div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.3/build/global/luxon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.3.1/dist/chartjs-adapter-luxon.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-streaming@2.0.0/dist/chartjs-plugin-streaming.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c79d55a71298fd523342e46f3679de75"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/assets/types.js"></script>
+    <script src="script.js"></script>
+  <body>
+</html>

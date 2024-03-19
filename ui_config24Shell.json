@@ -1,0 +1,131 @@
+[
+    {
+      "name": "아날로그",
+      "icon": "gauge-simple-high",
+      "data": [
+        {
+          "name": "CPU 온도",
+          "icon": "temperature-three-quarters",
+          "display": "graph",
+          "type": "standard",
+          "source": "ANALOG / CPU_TEMP",
+          "scale": 1,
+          "unit": "°C"
+        },
+        {
+          "name": "LV 전압",
+          "icon": "bolt",
+          "display": "graph",
+          "type": "standard",
+          "source": "ANALOG / INPUT_VOLTAGE",
+          "scale": 1,
+          "unit": "V"
+        }
+      ]
+    },
+    {
+      "name": "가속도",
+      "icon": "car-on",
+      "data": [
+        {
+          "name": "핸들조향각",
+          "icon": "x",
+          "display": "graph",
+          "type": "standard",
+          "source": "ACCELEROMETER / x",
+          "scale": 1,
+          "unit": "degree"
+        }
+      ]
+    },
+    {
+      "name": "GPS",
+      "icon": "satellite",
+      "data": [
+        {
+          "name": "map",
+          "icon": "map-location-dot",
+          "display": "gps"
+        },
+        {
+          "name": "위도",
+          "icon": "map-location-dot",
+          "display": "value",
+          "type": "standard",
+          "source": "GPS / lat",
+          "scale": 1,
+          "unit": "°"
+        },
+        {
+          "name": "경도",
+          "icon": "map-location-dot",
+          "display": "value",
+          "type": "standard",
+          "source": "GPS / lon",
+          "scale": 1,
+          "unit": "°"
+        },
+        {
+          "name": "GPS 속도",
+          "icon": "plane",
+          "display": "graph",
+          "type": "standard",
+          "source": "GPS / speed",
+          "scale": 1,
+          "unit": "km/h"
+        },
+        {
+          "name": "진행 방향",
+          "icon": "location-arrow",
+          "display": "value",
+          "type": "standard",
+          "source": "GPS / speed",
+          "scale": 1,
+          "unit": "°"
+        }
+      ]
+    },
+    {
+      "name": "차량 전력",
+      "icon": "car-on",
+      "data": [
+        {
+          "name": "슈퍼캡 전압",
+          "icon": "x",
+          "display": "graph",
+          "type": "standard",
+          "source": "ANALOG / INPUT_VOLTAGE",
+          "scale": 1,
+          "unit": "V"
+        },
+        {
+          "name": "슈퍼캡 전류",
+          "icon": "x",
+          "display": "graph",
+          "type": "standard",
+          "source": "ANALOG / INPUT_VOLTAGE",
+          "scale": 1,
+          "unit": "A"
+        },
+        {
+          "name": "회생제동 전압",
+          "icon": "x",
+          "display": "graph",
+          "type": "standard",
+          "source": "ANALOG / INPUT_VOLTAGE",
+          "scale": 1,
+          "unit": "V"
+        },
+        {
+          "name": "회생제동 전류",
+          "icon": "x",
+          "display": "graph",
+          "type": "standard",
+          "source": "ANALOG / INPUT_VOLTAGE",
+          "scale": 1,
+          "unit": "A"
+        }
+      ]
+    }
+    
+  ]

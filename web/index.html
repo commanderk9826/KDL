@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta property="og:title" content="KUST Data Analyzer"/>
+		<meta property="og:url" content="https://commanderk.site"/>
+		<meta property="og:image" content="./asset/logo/kust_logo.png"/>
+		<meta property="og:description" content="KUST Data Analysis Toolset"/>
+
+    <title>KUST Data Analyzer</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/logo/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/logo/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/logo/favicon/favicon-16x16.png">
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./assets/btn.css">
+    <link rel="stylesheet" href="./assets/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="./assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7CH99H4S2Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7CH99H4S2Z');
+    </script>
+  </head>
+  <body>
+    <div id="header">
+      <div id="logo" style='margin-top: 1rem'>
+        <a href="/">
+          <img src="./assets/logo/kust_logo.png">
+        </a>
+      </div>
+    </div>
+
+    <div id='container'>
+      <article>
+        <h1><i class="fa-solid fa-fw fa-passport"></i>&nbsp;Information</h1>
+        <div class="content" style='padding-top: 1rem; line-height: 2rem'>
+            <div style="text-align: center">
+                <div><a class="btn_download" href='/live' target='_blank'><span class="btn yellow"><i class="fa-solid fa-fw fa-tower-broadcast"></i>&ensp;Live Telemetry</span></a></div>
+                <div><a class="btn_download" href='https://cms.kookmin.ac.kr/KUSTHOME/index.do' target='_blank'><span class="btn purple"><i class="fa-solid fa-house"></i>&ensp;KUST 홈페이지</span></a></div>
+                <div><a class="btn_download" href='https://github.com/commanderk9826/DL_KUST' target='_blank'><span class="btn orange"><i class="fa-brands fa-fw fa-github"></i>&ensp;GitHub</span></a></div>
+            </div>
+        </div>
+      </article>
+
+      <article>
+        <h1><i class="fa-solid fa-fw fa-file-import"></i>&nbsp;로그 변환</h1>
+        <div class="content" style='padding-top: 1rem; line-height: 2rem'>
+          <div>
+            <input id="file" type="file" name="file" accept=".log" style="margin-top: .5rem; margin-left:2rem;">
+          </div>
+        </div>
+        <div class="content" style='padding-top: 1rem; line-height: 2rem'>
+          <span id="load_file_first" style="font-weight: bold;">변환할 파일을 선택하세요.</span><br>
+대용량 로그는 변환에 시간이 다소 소요됩니다.
+
+          <div style="text-align: center">
+            <div><a id="json_download" class="btn_download disabled"><span class="btn green"><i class="fa-solid fa-fw fa-download"></i>&ensp;JSON 다운로드</span></a></div>
+            <div><a id="csv_download" class="btn_download disabled"><span class="btn green"><i class="fa-solid fa-fw fa-download"></i>&ensp;CSV 다운로드</span></a></div>
+          </div>
+        </div>
+      </article>
+
+      <article style='width: 90vw; max-width: 90vw'>
+        <h1><i class="fa-solid fa-fw fa-chart-column"></i>&nbsp;데이터 뷰어</h1>
+        <div class="content" style='padding-top: 1rem; line-height: 2rem; position: relative'>
+          <div>
+            로그: <span style='font-weight: bold'><span id='converted-count'>0</span>개</span>(총 <span id='data-count'>0</span>개 중 오류 <span id='error-count'>0</span>개) / <span style='font-weight: bold'><span id='duration'>0</span>분</span><br>
+            데이터를 줌인하려면 그래프를 드래그하거나 마우스 휠을 사용하세요.
+            <div id='graph-area'>
+              <div id='graphs'></div>
+              <span id='add_graph' class="btn blue disabled" style='height: 1.5rem; line-height: 1.5rem;'><i class="fa-solid fa-fw fa-plus"></i>&ensp;그래프 추가</span>
+          </div>
+        </div>
+      </article>
+      <article style='width: 90vw; max-width: 90vw'>
+        <h1><i class="fa-solid fa-fw fa-satellite"></i>&nbsp;GPS 뷰어</h1>
+        <div class="content" style='padding-top: 1rem;'>
+          <div id="map" style="width: 100%; height: 60vh;"></div>
+        </div>
+      </article>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.3/build/global/luxon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.3.1/dist/chartjs-adapter-luxon.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-crosshair@2.0.0/dist/chartjs-plugin-crosshair.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-autocolors@0.2.2/dist/chartjs-plugin-autocolors.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c79d55a71298fd523342e46f3679de75"></script>
+    <script src="/assets/types.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

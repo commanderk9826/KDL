@@ -1,0 +1,212 @@
+[
+    {
+      "name": "디지털",
+      "icon": "wand-magic-sparkles",
+      "data": [
+        {
+          "name": "DIN0",
+          "icon": "database",
+          "display": "digital",
+          "type": "standard",
+          "source": "DIGITAL / DIN0"
+        },
+        {
+          "name": "DIN1",
+          "icon": "database",
+          "display": "value",
+          "type": "standard",
+          "source": "DIGITAL / DIN1",
+          "scale": 1,
+          "unit": "V"
+        },
+        {
+          "name": "DIN2",
+          "icon": "database",
+          "display": "graph",
+          "type": "standard",
+          "source": "DIGITAL / DIN2",
+          "scale": 1,
+          "unit": "A"
+        },
+        {
+          "name": "DIN3",
+          "icon": "database",
+          "display": "digital",
+          "type": "standard",
+          "source": "DIGITAL / DIN3"
+        },
+        {
+          "name": "DIN4",
+          "icon": "database",
+          "display": "value",
+          "type": "standard",
+          "source": "DIGITAL / DIN4",
+          "scale": 1,
+          "unit": "V"
+        },
+        {
+          "name": "DIN5",
+          "icon": "database",
+          "display": "graph",
+          "type": "standard",
+          "source": "DIGITAL / DIN5",
+          "scale": 1,
+          "unit": "A"
+        },
+        {
+          "name": "DIN6",
+          "icon": "database",
+          "display": "digital",
+          "type": "standard",
+          "source": "DIGITAL / DIN6"
+        },
+        {
+          "name": "DIN7",
+          "icon": "database",
+          "display": "digital",
+          "type": "standard",
+          "source": "DIGITAL / DIN7"
+        }
+      ]
+    },
+    {
+      "name": "아날로그",
+      "icon": "gauge-simple-high",
+      "data": [
+        {
+          "name": "AIN0",
+          "icon": "0",
+          "display": "value",
+          "type": "standard",
+          "source": "ANALOG / AIN0",
+          "scale": 5,
+          "unit": "V"
+        },
+        {
+          "name": "AIN1",
+          "icon": "1",
+          "display": "value",
+          "type": "standard",
+          "source": "ANALOG / AIN1",
+          "scale": 5,
+          "unit": "V"
+        },
+        {
+          "name": "AIN2",
+          "icon": "2",
+          "display": "value",
+          "type": "standard",
+          "source": "ANALOG / AIN2",
+          "scale": 5,
+          "unit": "V"
+        },
+        {
+          "name": "AIN3",
+          "icon": "3",
+          "display": "value",
+          "type": "standard",
+          "source": "ANALOG / AIN3",
+          "scale": 5,
+          "unit": "V"
+        },
+        {
+          "name": "CPU 온도",
+          "icon": "temperature-three-quarters",
+          "display": "graph",
+          "type": "standard",
+          "source": "ANALOG / CPU_TEMP",
+          "scale": 1,
+          "unit": "°C"
+        },
+        {
+          "name": "LV 전압",
+          "icon": "bolt",
+          "display": "graph",
+          "type": "standard",
+          "source": "ANALOG / INPUT_VOLTAGE",
+          "scale": 1,
+          "unit": "V"
+        }
+      ]
+    },
+    {
+      "name": "가속도",
+      "icon": "car-on",
+      "data": [
+        {
+          "name": "X-axis",
+          "icon": "x",
+          "display": "graph",
+          "type": "standard",
+          "source": "ACCELEROMETER / x",
+          "scale": 1,
+          "unit": "G"
+        },
+        {
+          "name": "Y-axis",
+          "icon": "y",
+          "display": "graph",
+          "type": "standard",
+          "source": "ACCELEROMETER / y",
+          "scale": 1,
+          "unit": "G"
+        },
+        {
+          "name": "Z-axis",
+          "icon": "z",
+          "display": "graph",
+          "type": "standard",
+          "source": "ACCELEROMETER / z",
+          "scale": 1,
+          "unit": "G"
+        }
+      ]
+    },
+    {
+      "name": "GPS",
+      "icon": "satellite",
+      "data": [
+        {
+          "name": "map",
+          "icon": "map-location-dot",
+          "display": "gps"
+        },
+        {
+          "name": "위도",
+          "icon": "map-location-dot",
+          "display": "value",
+          "type": "standard",
+          "source": "GPS / lat",
+          "scale": 1,
+          "unit": "°"
+        },
+        {
+          "name": "경도",
+          "icon": "map-location-dot",
+          "display": "value",
+          "type": "standard",
+          "source": "GPS / lon",
+          "scale": 1,
+          "unit": "°"
+        },
+        {
+          "name": "GPS 속도",
+          "icon": "plane",
+          "display": "graph",
+          "type": "standard",
+          "source": "GPS / speed",
+          "scale": 1,
+          "unit": "km/h"
+        },
+        {
+          "name": "진행 방향",
+          "icon": "location-arrow",
+          "display": "value",
+          "type": "standard",
+          "source": "GPS / speed",
+          "scale": 1,
+          "unit": "°"
+        }
+      ]
+    }
+  ]

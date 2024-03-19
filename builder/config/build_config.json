@@ -1,0 +1,37 @@
+{
+  "STM32": {
+    "output": {
+      "telemetry": true,
+      "serial": false
+    },
+    "sensor": {
+      "can": true,
+      "digital": true,
+      "analog": true,
+      "pulse": true,
+      "accelerometer": true,
+      "gps": true
+    },
+    "debug": {
+      "debug_mode": false,
+      "release_build": true
+    },
+    "can": {
+      "baudrate": "500 kbit/s"
+    }
+  },
+  "ESP32": {
+    "port": "",
+    "network": {
+      "ssid": "YOUR_WIFI_SSID",
+      "password": "YOUR_WIFI_PWD"
+    },
+    "channel": {
+      "name": "default",
+      "key": "password"
+    },
+    "server": {
+      "name": "monolith.luftaquila.io"
+    }
+  }
+}

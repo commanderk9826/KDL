@@ -1,0 +1,505 @@
+MDScreen
+    id: screen
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDScrollView:
+            MDGridLayout:
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                padding: '30dp', '20dp'
+
+                MDLabel:
+                    text: 'Monolith TMA-1 Configuration Tool'
+                    font_size: '35sp'
+                    bold: True
+                    size: self.texture_size
+                    size_hint_y: None
+
+                MDStackLayout:
+                    orientation: 'tb-lr'
+                    padding: 0, '10dp', 0, 0
+
+                    MDIcon:
+                        icon: 'text-box'
+                        font_size: '16sp'
+
+                    MDLabel:
+                        text: '[u][color=#0366d6][ref=https://github.com/luftaquila/monolith/wiki/TMA%E2%80%901-%EC%84%A4%EC%A0%95-%EB%8F%84%EA%B5%AC-%EA%B0%80%EC%9D%B4%EB%93%9C]Manual[/ref][/color][/u]'
+                        font_name: 'consola'
+                        font_size: '15sp'
+                        markup: True
+                        size_hint: None, None
+                        size: '70sp', '16sp'
+                        padding: '3sp', 0, 0, 0
+                        on_ref_press:
+                            import webbrowser
+                            webbrowser.open(args[1])
+
+                    MDIcon:
+                        icon: 'github'
+                        font_size: '16sp'
+
+                    MDLabel:
+                        text: '[u][color=#0366d6][ref=https://github.com/luftaquila/monolith]GitHub[/ref][/color][/u]'
+                        font_name: 'consola'
+                        font_size: '15sp'
+                        markup: True
+                        size_hint: None, None
+                        size: '70sp', '16sp'
+                        padding: '3sp', 0, 0, 0
+                        on_ref_press:
+                            import webbrowser
+                            webbrowser.open(args[1])
+
+                    MDIcon:
+                        icon: 'web'
+                        font_size: '16sp'
+
+                    MDLabel:
+                        text: '[u][color=#0366d6][ref=https://luftaquila.io]Website[/ref][/color][/u]'
+                        font_name: 'consola'
+                        font_size: '15sp'
+                        markup: True
+                        size_hint: None, None
+                        size: '70sp', '16sp'
+                        padding: '3sp', 0, 0, 0
+                        on_ref_press:
+                            import webbrowser
+                            webbrowser.open(args[1])
+
+                    MDLabel:
+                        text: 'by LUFT-AQUILA([u][color=#0366d6][ref=mailto:mail@luftaquila.io]mail@luftaquila.io[/ref][/color][/u])'
+                        font_name: 'consola'
+                        font_size: '14sp'
+                        markup: True
+                        size_hint: None, None
+                        size: '300sp', '16sp'
+                        padding: '6dp', 0, 0, 0
+                        on_ref_press:
+                            import webbrowser
+                            webbrowser.open(args[1])
+
+                MDLabel:
+                    text: 'Datalogging'
+                    font_size: '24sp'
+                    bold: True
+                    size: self.texture_size
+                    size_hint_y: None
+                    padding: 0, '60dp', 0, 0
+
+                MDLabel:
+                    text: 'Output'
+                    font_size: '18sp'
+                    bold: True
+                    size: self.texture_size
+                    size_hint_y: None
+                    padding: '50dp', '20dp', 0, 0
+
+                MDGridLayout:
+                    cols: 2
+                    padding: '100dp', '10dp', 0, 0
+                    size_hint_y: None
+                    height: self.minimum_height
+
+                    MDLabel:
+                        text: "SD card"
+                        font_name: 'consola'
+                        size: '300sp', self.height
+                        size_hint_x: None
+
+                    MDBoxLayout:
+                        size_hint: None, None
+                        size: '50dp', '50dp'
+                        MDCheckbox:
+                            active: True
+                            disabled: True
+                            color_inactive: 'grey'
+
+                    MDLabel:
+                        text: "Telemetry"
+                        font_name: 'consola'
+                        size: '300sp', self.height
+                        size_hint_x: None
+
+                    MDBoxLayout:
+                        size_hint: None, None
+                        size: '50dp', '50dp'
+                        MDCheckbox:
+                            id: telemetry
+                            active: True
+                            color_inactive: 'grey'
+                            on_active: app.on_checkbox_active(*args)
+
+                    MDLabel:
+                        text: "Serial"
+                        font_name: 'consola'
+                        size: '300sp', self.height
+                        size_hint_x: None
+
+                    MDBoxLayout:
+                        size_hint: None, None
+                        size: '50dp', '50dp'
+                        MDCheckbox:
+                            id: serial
+                            active: True
+                            color_inactive: 'grey'
+                            on_active: app.on_checkbox_active(*args)
+
+                MDLabel:
+                    text: 'Sensors'
+                    font_size: '18sp'
+                    bold: True
+                    size: self.texture_size
+                    size_hint_y: None
+                    padding: '50dp', '10dp', 0, 0
+
+                MDGridLayout:
+                    cols: 2
+                    padding: '100dp', '10dp', 0, 0
+                    size_hint_y: None
+                    height: self.minimum_height
+
+                    MDLabel:
+                        text: "CPU Temperature"
+                        font_name: 'consola'
+                        size: '300sp', self.height
+                        size_hint_x: None
+
+                    MDBoxLayout:
+                        size_hint: None, None
+                        size: '50dp', '50dp'
+                        MDCheckbox:
+                            active: True
+                            disabled: True
+                            color_inactive: 'grey'
+
+                    MDLabel:
+                        text: "Input Voltage"
+                        font_name: 'consola'
+                        size: '300sp', self.height
+                        size_hint_x: None
+
+                    MDBoxLayout:
+                        size_hint: None, None
+                        size: '50dp', '50dp'
+                        MDCheckbox:
+                            active: True
+                            disabled: True
+                            color_inactive: 'grey'
+
+                    MDLabel:
+                        text: "CAN"
+                        font_name: 'consola'
+                        size: '300sp', self.height
+                        size_hint_x: None
+
+                    MDBoxLayout:
+                        size_hint: None, None
+                        size: '50dp', '50dp'
+                        MDCheckbox:
+                            id: can
+                            active: True
+                            color_inactive: 'grey'
+                            on_active: app.on_checkbox_active(*args)
+
+                    MDLabel:
+                        text: "CAN baud rate"
+                        font_name: 'consola'
+                        padding: '30dp', 0, 0, 0
+                        size: '200sp', self.height
+                        size_hint_x: None
+
+                    MDBoxLayout:
+                        size_hint: None, None
+                        size: '150dp', '50dp'
+                        padding: '-70dp', 0, 0, 0
+                        MDDropDownItem:
+                            id: can_baudrate
+                            text: "500 kbit/s"
+                            pos_hint: {'center_x': 0, 'center_y': .5}
+                            on_release: app.can_baudrate_menu.open()
+
+                    MDLabel:
+                        text: "Digital"
+                        font_name: 'consola'
+                        size: '300sp', self.height
+                        size_hint_x: None
+
+                    MDBoxLayout:
+                        size_hint: None, None
+                        size: '50dp', '50dp'
+                        MDCheckbox:
+                            id: digital
+                            active: True
+                            color_inactive: 'grey'
+                            on_active: app.on_checkbox_active(*args)
+
+                    MDLabel:
+                        text: "Analog"
+                        font_name: 'consola'
+                        size: '300sp', self.height
+                        size_hint_x: None
+
+                    MDBoxLayout:
+                        size_hint: None, None
+                        size: '50dp', '50dp'
+                        MDCheckbox:
+                            id: analog
+                            active: True
+                            color_inactive: 'grey'
+                            on_active: app.on_checkbox_active(*args)
+
+                    MDLabel:
+                        text: "Pulse"
+                        font_name: 'consola'
+                        size: '300sp', self.height
+                        size_hint_x: None
+
+                    MDBoxLayout:
+                        size_hint: None, None
+                        size: '50dp', '50dp'
+                        MDCheckbox:
+                            id: pulse
+                            active: True
+                            color_inactive: 'grey'
+                            on_active: app.on_checkbox_active(*args)
+
+                    MDLabel:
+                        text: "Accelerometer"
+                        font_name: 'consola'
+                        size: '300sp', self.height
+                        size_hint_x: None
+
+                    MDBoxLayout:
+                        size_hint: None, None
+                        size: '50dp', '50dp'
+                        MDCheckbox:
+                            id: accelerometer
+                            active: True
+                            color_inactive: 'grey'
+                            on_active: app.on_checkbox_active(*args)
+
+                    MDLabel:
+                        text: "GPS"
+                        font_name: 'consola'
+                        size: '300sp', self.height
+                        size_hint_x: None
+
+                    MDBoxLayout:
+                        size_hint: None, None
+                        size: '50dp', '50dp'
+                        MDCheckbox:
+                            id: gps
+                            active: True
+                            color_inactive: 'grey'
+                            on_active: app.on_checkbox_active(*args)
+
+                MDLabel:
+                    text: 'Upload'
+                    font_size: '24sp'
+                    bold: True
+                    size: self.texture_size
+                    size_hint_y: None
+                    padding: 0, '20dp', 0, 0
+
+                MDGridLayout:
+                    cols: 2
+                    padding: '50dp', '10dp', 0, 0
+                    size_hint_y: None
+                    height: self.minimum_height
+
+                    MDLabel:
+                        text: "Debug Mode"
+                        font_name: 'consola'
+                        size: '350sp', self.height
+                        size_hint_x: None
+
+                    MDBoxLayout:
+                        size_hint: None, None
+                        size: '50dp', '50dp'
+                        MDCheckbox:
+                            id: debug_mode
+                            active: True
+                            color_inactive: 'grey'
+                            on_active: app.on_checkbox_active(*args)
+
+                    MDLabel:
+                        text: "Release Build"
+                        font_name: 'consola'
+                        size: '350sp', self.height
+                        size_hint_x: None
+
+                    MDBoxLayout:
+                        size_hint: None, None
+                        size: '50dp', '50dp'
+                        MDCheckbox:
+                            id: release_build
+                            active: True
+                            color_inactive: 'grey'
+                            on_active: app.on_checkbox_active(*args)
+
+                MDBoxLayout:
+                    size_hint_y: None
+                    height: self.minimum_height
+                    padding: '50dp', '20dp', 0, '30dp'
+                    spacing: '30dp'
+
+                    MDFillRoundFlatIconButton:
+                        id: flash_stm32
+                        icon: 'chip'
+                        text: '[b]Flash TMA-1[/b]'
+                        markup: True
+                        font_size: '18sp'
+                        on_press: app.flash_stm32()
+
+                    MDFillRoundFlatIconButton:
+                        id: sync_rtc
+                        icon: 'timer-sync-outline'
+                        text: '[b]Sync RTC[/b]'
+                        markup: True
+                        font_size: '18sp'
+                        on_press: app.sync_rtc()
+
+                    MDFillRoundFlatIconButton:
+                        id: clean
+                        icon: 'auto-fix'
+                        text: '[b]Clean[/b]'
+                        markup: True
+                        font_size: '18sp'
+                        on_press: app.clean()
+
+                MDLabel:
+                    text: 'Telemetry'
+                    font_size: '24sp'
+                    bold: True
+                    size: self.texture_size
+                    size_hint_y: None
+                    padding: 0, '20dp', 0, 0
+
+                MDGridLayout:
+                    cols: 2
+                    padding: '50dp', '10dp', 0, 0
+                    size_hint_y: None
+                    height: self.minimum_height
+
+                    MDLabel:
+                        text: "Wi-Fi Hotspot SSID"
+                        font_name: 'consola'
+                        size: '300sp', self.height
+                        size_hint_x: None
+
+                    MDBoxLayout:
+                        size_hint: None, None
+                        size: '200dp', '50dp'
+                        MDTextField:
+                            id: network_ssid
+                            on_text: app.on_text_change(*args)
+
+                    MDLabel:
+                        text: "Wi-Fi Hotspot Password"
+                        font_name: 'consola'
+                        size: '300sp', self.height
+                        size_hint_x: None
+
+                    MDBoxLayout:
+                        size_hint: None, None
+                        size: '200dp', '50dp'
+                        MDTextField:
+                            id: network_password
+                            on_text: app.on_text_change(*args)
+
+                    MDLabel:
+                        text: "Channel Name"
+                        font_name: 'consola'
+                        size: '300sp', self.height
+                        size_hint_x: None
+
+                    MDBoxLayout:
+                        size_hint: None, None
+                        size: '200dp', '50dp'
+                        MDTextField:
+                            id: channel_name
+                            on_text: app.on_text_change(*args)
+
+                    MDLabel:
+                        text: "Channel Key"
+                        font_name: 'consola'
+                        size: '300sp', self.height
+                        size_hint_x: None
+
+                    MDBoxLayout:
+                        size_hint: None, None
+                        size: '200dp', '50dp'
+                        MDTextField:
+                            id: channel_key
+                            on_text: app.on_text_change(*args)
+
+                    MDLabel:
+                        text: "Server Name"
+                        font_name: 'consola'
+                        size: '300sp', self.height
+                        size_hint_x: None
+
+                    MDBoxLayout:
+                        size_hint: None, None
+                        size: '200dp', '50dp'
+                        MDTextField:
+                            id: server_name
+                            on_text: app.on_text_change(*args)
+
+                    MDLabel:
+                        text: "COM Port"
+                        font_name: 'consola'
+                        size: '300sp', self.height
+                        size_hint_x: None
+
+                    MDBoxLayout:
+                        size_hint: None, None
+                        size: '200dp', '50dp'
+                        MDTextField:
+                            id: comport
+                            hint_text: "Leave empty to auto-detect"
+                            on_text: app.on_text_change(*args)
+
+                MDBoxLayout:
+                    size_hint_y: None
+                    height: self.minimum_height
+                    padding: '50dp', '10dp', 0, '30dp'
+                    spacing: '30dp'
+
+                    MDFillRoundFlatIconButton:
+                        id: flash_esp32
+                        icon: 'satellite-variant'
+                        text: '[b]Flash ESP32[/b]'
+                        markup: True
+                        font_size: '18sp'
+                        on_press: app.flash_esp32()
+
+
+#                MDLabel:
+#                    text: 'Console'
+#                    font_size: '24sp'
+#                    bold: True
+#                    size: self.texture_size
+#                    size_hint_y: None
+#                    padding: 0, '40dp', 0, '20dp'
+#
+#                MDBoxLayout:
+#                    size_hint_y: None
+#                    height: '400dp'
+#
+#                    MDScrollView:
+#                        id: scrlv
+#                        MDTextFieldRect:
+#                            id: console
+#                            font_name: 'consola'
+#                            font_size: '14sp'
+#                            line_spacing: '3sp'
+#                            multiline: True
+#                            max_height: '300dp'
+#                            size_hint_y: 1
+#                            height: max(self.minimum_height, scrlv.height)
+#                            readonly: True
+#                            foreground_color: 1, 1, 1, 1
+#                            background_color: 'black'

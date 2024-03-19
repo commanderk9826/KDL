@@ -1,0 +1,7 @@
+{
+  "port": 80,
+  "channels": [
+    { "name": "commanderk9826", "key": "9826" },
+    { "name": "kust_302", "key": "kust_201" }
+  ]
+}

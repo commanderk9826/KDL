@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/ch.lee/Desktop/DL_KUST/device/telemetry",
+      "program": "/Users/ch.lee/Desktop/DL_KUST/device/telemetry/build/Debug/outDebug"
+    }
+  ]
+}

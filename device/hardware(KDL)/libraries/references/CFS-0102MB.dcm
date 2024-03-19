@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP CFS-0102MB
+D CFS SLIDE SWITCHES (FULL PITCH)
+K
+F https://www.nidec-copal-electronics.com/e/catalog/switch/cfs.pdf
+$ENDCMP
+#
+#End Doc Library
